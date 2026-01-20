@@ -1,4 +1,5 @@
 #include <iostream>
+#include "include/Contact.hpp"
 
 int	main(void)
 {
