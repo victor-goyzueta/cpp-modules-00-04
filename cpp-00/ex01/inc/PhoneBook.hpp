@@ -2,22 +2,25 @@
 # define PHONEBOOK_HPP
 
 # include "Contact.hpp"
-# include <cstring>
+# include <string>
 
 class PhoneBook
 {
 	private:
 		int			contactNum;
-		Contact		contacts[8];
-		std::string	truncateStr(std::string str, int x) const;
+		Contact 	contacts[8];
+		std::string	truncateStr(std::string str) const;
+		bool		validateInput(const Contact& contact);
 
 	public:
 		PhoneBook();
 
-		void	addContacts(const Contact& contact);
-		void	searchContacts() const;
-		void	printContactDetails(int index) const;
+		void	addContact(const Contact& contact);
 
-		int		getContactNumber() const;
+		void	searchContact() const;
+		void	printContact(int index) const;
+		
+		int		getContactNum() const;
 };
+
 #endif

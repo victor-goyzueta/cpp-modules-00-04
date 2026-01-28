@@ -1,4 +1,5 @@
 #include "../inc/Contact.hpp"
+#include <string>
 
 Contact::Contact() {}
 
@@ -7,27 +8,27 @@ Contact::Contact(std::string firstName, std::string lastName, std::string nickna
 	: firstName(firstName), lastName(lastName), nickname(nickname),
 		phoneNumber(phoneNumber), darkestSecret(darkestSecret) {}
 
-std::string Contact::getFirstName() const
+std::string	Contact::getFirstName() const
 {
 	return (firstName);
 }
 
-std::string Contact::getLastName() const
+std::string	Contact::getLastName() const
 {
 	return (lastName);
 }
 
-std::string Contact::getNickname() const
+std::string	Contact::getNickname() const
 {
 	return (nickname);
 }
 
-std::string Contact::getPhoneNumber() const
+std::string	Contact::getPhoneNumber() const
 {
 	return (phoneNumber);
 }
 
-std::string Contact::getDarkestSecret() const
+std::string	Contact::getDarkestSecret() const
 {
 	return (darkestSecret);
 }

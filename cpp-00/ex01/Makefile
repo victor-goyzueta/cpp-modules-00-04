@@ -1,9 +1,12 @@
-NAME = phoneBook
+NAME = phonebook
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -I inc
 
-SRC = src/PhoneBook.cpp src/Contact.cpp main.cpp
+SRC =	src/PhoneBook.cpp	\
+		src/Contact.cpp		\
+		main.cpp			\
+
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)

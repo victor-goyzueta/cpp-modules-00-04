@@ -1,16 +1,20 @@
-#include <iostream>
 #include "inc/Contact.hpp"
 #include "inc/PhoneBook.hpp"
+#include <iostream>
+#include <string>
+
 
 int	main(void)
 {
 	PhoneBook	phoneBook;
-	std::string command;
-	
+	std::string	command;
+
 	while (true)
 	{
 		std::cout << "Enter a command <ADD> <SEARCH> or <EXIT>" << std::endl;
 		std::cin >> command;
+		if (command.empty())
+			return (1);
 		if (command == "ADD")
 		{
 			std::string firstName, lastName, nickname, phoneNumber, darkestSecret;
@@ -25,16 +29,16 @@ int	main(void)
 			std::cout << "Enter Darkest Secret: ";
 			std::cin >> darkestSecret;
 			Contact newContact(firstName, lastName, nickname, phoneNumber, darkestSecret);
-			phoneBook.addContacts(newContact);
+			phoneBook.addContact(newContact);
 		}
 		else if (command == "SEARCH")
 		{
-			int index;
+			int	index;
 
-			phoneBook.searchContacts();
+			phoneBook.searchContact();
 			std::cout << "Enter contact index: ";
 			std::cin >> index;
-			phoneBook.printContactDetails(index);
+			phoneBook.printContact(index);
 		}
 		else if (command == "EXIT")
 			break ;
