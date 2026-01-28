@@ -5,6 +5,8 @@
 
 PhoneBook::PhoneBook() {}
 
+PhoneBook::~PhoneBook() {}
+
 std::string	PhoneBook::truncateStr(std::string str) const
 {
 	int	size;
@@ -15,25 +17,9 @@ std::string	PhoneBook::truncateStr(std::string str) const
 	return (str.substr(0, 8) + ".");
 }
 
-bool	PhoneBook::validateInput(const Contact& contact)
-{
-	if ((contact.getFirstName()).empty()
-		|| (contact.getLastName()).empty()
-		|| (contact.getNickname()).empty()
-		|| (contact.getPhoneNumber()).empty()
-		|| (contact.getDarkestSecret()).empty())
-		return (false);
-	return (true);
-}
-
 void	PhoneBook::addContact(const Contact& contact)
 {
-	if (!validateInput(contact))
-	{
-		std::cout << "Contact has not been saved: There are empty fields" << std::endl;
-		return ;
-	}
-	if (contactNum < 8)
+if (contactNum < 8)
 		contacts[contactNum++] = contact;
 	else
 	{
@@ -62,16 +48,16 @@ void	PhoneBook::searchContact() const
 void	PhoneBook::printContact(int index) const
 {
 	if (index < 0 || index >= contactNum)
-		std::cout << "Invalid index provided" << std::endl;
-	else
 	{
-		const Contact& cur = contacts[index];
-		std::cout << "First Name: " << cur.getFirstName() << std::endl;
-		std::cout << "Last Name: " << cur.getLastName() << std::endl;
-		std::cout << "Nickname: " << cur.getNickname() << std::endl;
-		std::cout << "Phone Number: " << cur.getPhoneNumber() << std::endl;
-		std::cout << "Darkest Secret: " << cur.getDarkestSecret() << std::endl;
+		std::cout << "Invalid index provided" << std::endl;
+		return ;
 	}
+	const Contact& cur = contacts[index];
+	std::cout << "First Name: " << cur.getFirstName() << std::endl;
+	std::cout << "Last Name: " << cur.getLastName() << std::endl;
+	std::cout << "Nickname: " << cur.getNickname() << std::endl;
+	std::cout << "Phone Number: " << cur.getPhoneNumber() << std::endl;
+	std::cout << "Darkest Secret: " << cur.getDarkestSecret() << std::endl;
 }
 
 int		PhoneBook::getContactNum() const

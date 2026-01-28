@@ -8,6 +8,8 @@ Contact::Contact(std::string firstName, std::string lastName, std::string nickna
 	: firstName(firstName), lastName(lastName), nickname(nickname),
 		phoneNumber(phoneNumber), darkestSecret(darkestSecret) {}
 
+Contact::~Contact() {}
+
 std::string	Contact::getFirstName() const
 {
 	return (firstName);
