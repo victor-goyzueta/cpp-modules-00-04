@@ -1,10 +1,12 @@
 #include "Account.hpp"
+#include <iostream>
 
 Account::Account() {}
 
 Account::Account(int initial_deposit)
 {
 	//
+
 }
 
 Account::~Account() 
@@ -19,27 +21,22 @@ void	Account::_displayTimestamp()
 
 int	Account::getNbAccounts()
 {
-	//
+	return (_nbAccounts);
 }
 
 int	Account::getTotalAmount( void )
 {
-	//
-}
-
-int	Account::getTotalAmount()
-{
-	//
+	return (_totalAmount);
 }
 
 int	Account::getNbDeposits()
 {
-	//
+	return (_nbDeposits);
 }
 
 int	Account::getNbWithdrawals()
 {
-	//
+	return (_nbWithdrawals);
 }
 
 void	Account::displayAccountsInfos()
