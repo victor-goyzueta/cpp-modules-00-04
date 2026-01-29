@@ -3,6 +3,7 @@
 #include <iostream>
 #include <cctype>
 #include <string>
+#include <stdlib.h>
 
 int	main(void)
 {
@@ -15,7 +16,7 @@ int	main(void)
 			return (1);
 		std::cout << "Enter a command <ADD> <SEARCH> or <EXIT>" << std::endl;
 		std::getline(std::cin, command);
-		if (command == "ADD")
+		if (command.compare("ADD") == 0)
 		{
 			std::string firstName, lastName, nickname, phoneNumber, darkestSecret;
 			std::cout << "Enter First Name: ";
@@ -56,30 +57,18 @@ int	main(void)
 			Contact newContact(firstName, lastName, nickname, phoneNumber, darkestSecret);
 			phoneBook.addContact(newContact);
 		}
-		else if (command == "SEARCH")
+		else if (command.compare("SEARCH") == 0)
 		{
-			int			index;
+			int			index = -1;
 			std::string	input;
 
 			phoneBook.searchContact();
 			std::cout << "Enter contact index: ";
 			std::getline(std::cin, input);
-			for (int i = 0; input[i]; i++)
-			{
-				while (isspace(input[i]))
-					i++;
-				if (input[i] == '+' || input[i] == '-')
-					i++;
-				if (!isdigit(input[i]))
-				{
-					input = "-1";
-					break ;
-				}
-			}
-			index = std::atoi(input.c_str());
+			index = std::atoi((input.c_str()));
 			phoneBook.printContact(index);
 		}
-		else if (command == "EXIT")
+		else if (command.compare("EXIT") == 0)
 			break ;
 		else
 			std::cout << "Command " << command << " ignored" << std::endl;

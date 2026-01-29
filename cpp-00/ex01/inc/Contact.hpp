@@ -14,9 +14,9 @@ class Contact
 
 	public:
 		Contact();
-		~Contact();
 		Contact(std::string firstName, std::string lastName, std::string nickname,
 			std::string phoneNumber, std::string darkestSecret);
+		~Contact();
 
 		std::string	getFirstName() const;
 		std::string	getLastName() const;

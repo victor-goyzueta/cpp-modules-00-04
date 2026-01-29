@@ -9,18 +9,16 @@ class PhoneBook
 	private:
 		int			contactNum;
 		Contact 	contacts[8];
+		std::string	truncateStr(std::string str) const;
 		
-		public:
+	public:
 		PhoneBook();
 		~PhoneBook();
 		
 		void	addContact(const Contact& contact);	
 		void	searchContact() const;
 		void	printContact(int index) const;
-
 		int		getContactNum() const;
-
-		std::string	truncateStr(std::string str) const;
-	};
+};
 
 #endif

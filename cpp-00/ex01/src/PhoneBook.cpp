@@ -3,7 +3,7 @@
 #include <iomanip>
 #include <string>
 
-PhoneBook::PhoneBook() {}
+PhoneBook::PhoneBook() : contactNum(0) {}
 
 PhoneBook::~PhoneBook() {}
 
@@ -19,14 +19,15 @@ std::string	PhoneBook::truncateStr(std::string str) const
 
 void	PhoneBook::addContact(const Contact& contact)
 {
-if (contactNum < 8)
-		contacts[contactNum++] = contact;
+	if (contactNum < 8)
+		contacts[contactNum] = contact;
 	else
 	{
 		for (int i = 1; i < 8; ++i)
 			contacts[i - 1] = contacts[i];
 		contacts[7] = contact;
 	}
+	contactNum++;
 	std::cout << "Contact successfully saved" << std::endl;
 }
 
