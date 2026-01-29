@@ -65,6 +65,8 @@ int	main(void)
 			phoneBook.searchContact();
 			std::cout << "Enter contact index: ";
 			std::getline(std::cin, input);
+			if (!phoneBook.validateIndex(input))
+				input = "-1";
 			index = std::atoi((input.c_str()));
 			phoneBook.printContact(index);
 		}

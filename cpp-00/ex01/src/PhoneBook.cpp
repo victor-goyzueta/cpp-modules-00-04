@@ -20,14 +20,13 @@ std::string	PhoneBook::truncateStr(std::string str) const
 void	PhoneBook::addContact(const Contact& contact)
 {
 	if (contactNum < 8)
-		contacts[contactNum] = contact;
+		contacts[contactNum++] = contact;
 	else
 	{
 		for (int i = 1; i < 8; ++i)
 			contacts[i - 1] = contacts[i];
 		contacts[7] = contact;
 	}
-	contactNum++;
 	std::cout << "Contact successfully saved" << std::endl;
 }
 
@@ -61,7 +60,21 @@ void	PhoneBook::printContact(int index) const
 	std::cout << "Darkest Secret: " << cur.getDarkestSecret() << std::endl;
 }
 
-int		PhoneBook::getContactNum() const
+bool	PhoneBook::validateIndex(std::string input)
 {
-	return (PhoneBook::contactNum);
+	int	i = 0;
+
+	while (isspace(input[i]))
+		i++;
+	if (input[i] == '+')
+		i++;
+	if (!isdigit(input[i]))
+		return (false);
+	while (isdigit(input[i]))
+		i++;
+	while (isspace(input[i]))
+		i++;
+	if (input[i] != '\0')
+		return (false);
+	return (true);
 }

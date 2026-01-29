@@ -18,7 +18,7 @@ class PhoneBook
 		void	addContact(const Contact& contact);	
 		void	searchContact() const;
 		void	printContact(int index) const;
-		int		getContactNum() const;
+		bool	validateIndex(std::string input);
 };
 
 #endif
