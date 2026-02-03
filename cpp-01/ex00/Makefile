@@ -2,6 +2,7 @@ NAME		= zombie
 
 CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
+CXXFLAGS	+= -I inc
 
 SRC			=	main.cpp			\
 				src/Zombie.cpp		\
