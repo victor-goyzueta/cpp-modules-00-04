@@ -1,5 +1,8 @@
 #include "../inc/Weapon.hpp"
 
+#include <iostream>
+#include <string>
+
 Weapon::Weapon(std::string type) : _type(type) {}
 
 Weapon::~Weapon() {}
