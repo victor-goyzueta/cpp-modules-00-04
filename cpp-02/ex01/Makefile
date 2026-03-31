@@ -5,7 +5,7 @@ CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 CXXFLAGS	+= -I inc
 
 SRC			=	main.cpp			\
-				Fixed.cpp			\
+				src/Fixed.cpp		\
 
 
 OBJ			= $(SRC:.cpp=.o)

@@ -9,7 +9,6 @@ class Fixed
 	private:
 		int						_nValue;
 		static const int		_nFractBits = 8;
-		friend std::ostream&	operator<<( std::ostream& os, const Fixed& fixed );
 
 	public:
 		Fixed( void );
@@ -19,7 +18,7 @@ class Fixed
 		~Fixed();
 
 		Fixed& operator=( const Fixed& copy );
-
+		
 		int		getRawBits( void ) const;
 		void	setRawBits( int const raw );
 		float	toFloat( void ) const;
