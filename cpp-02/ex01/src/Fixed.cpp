@@ -60,3 +60,9 @@ float	Fixed::toFloat( void ) const
 {
 	return( (float)_nValue / (1 << _nFractBits) );
 }
+
+std::ostream& operator<<(std::ostream& out, const Fixed &fixed)
+{
+	out << fixed.toFloat();
+	return (out);
+}
