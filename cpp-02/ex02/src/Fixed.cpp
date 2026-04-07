@@ -26,6 +26,11 @@ Fixed::Fixed(const float value)
 	_nValue = roundf(value * (1 << _nFractBits));
 }
 
+Fixed::~Fixed()
+{
+	std::cout << "Destructor called" << std::endl;
+}
+
 Fixed&	Fixed::operator=(const Fixed& copy)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
@@ -34,21 +39,131 @@ Fixed&	Fixed::operator=(const Fixed& copy)
 	return (*this);
 }
 
-Fixed::~Fixed()
+bool	Fixed::operator>( const Fixed&other ) const
 {
-	std::cout << "Destructor called" << std::endl;
+	return (this->getRawBits() > other.getRawBits());
+}
+
+bool	Fixed::operator<( const Fixed&other ) const
+{
+	return (this->getRawBits() < other.getRawBits());
+}
+
+bool	Fixed::operator>=( const Fixed&other ) const
+{
+	return (this->getRawBits() >= other.getRawBits());
+}
+
+bool	Fixed::operator<=( const Fixed&other ) const
+{
+	return (this->getRawBits() <= other.getRawBits());
+}
+
+bool	Fixed::operator==( const Fixed&other ) const
+{
+	return (this->getRawBits() == other.getRawBits());
+}
+
+bool	Fixed::operator!=( const Fixed&other ) const
+{
+	return (this->getRawBits() != other.getRawBits());
+}
+
+Fixed	Fixed::operator+( const Fixed& other ) const
+{
+	Fixed	result;
+
+	result.setRawBits(this->getRawBits() + other.getRawBits());
+	return (result);
+}
+
+Fixed	Fixed::operator-( const Fixed& other ) const
+{
+	Fixed	result;
+
+	result.setRawBits(this->getRawBits() - other.getRawBits());
+	return (result);
+}
+
+Fixed	Fixed::operator*( const Fixed& other ) const
+{
+	Fixed	result;
+
+	result.setRawBits((this->getRawBits() * other.getRawBits()) >> _nFractBits);
+	return (result);
+}
+
+Fixed	Fixed::operator/( const Fixed& other ) const
+{
+	Fixed	result;
+
+	if (other._nValue == 0)
+	{
+		std::cout << "Fixed::operator/: division by zero" << std::endl;
+		return result;
+	}
+	result.setRawBits((this->getRawBits() << _nFractBits) / other.getRawBits());
+	return (result);
+}
+
+Fixed&	Fixed::operator++( void )
+{
+	this->_nValue++;
+	return (*this);
+}
+
+Fixed	Fixed::operator++( int )
+{
+	Fixed tmp(*this);
+
+    this->_nValue++;
+    return (tmp);
+}
+
+Fixed&	Fixed::operator--( void )
+{
+	this->_nValue--;
+	return (*this);
+}
+
+Fixed	Fixed::operator--( int )
+{
+	Fixed tmp(*this);
+
+    this->_nValue--;
+    return (tmp);
+}
+
+Fixed&	Fixed::min(Fixed &a, Fixed &b)
+{
+    return ((a < b) ? a : b);
+}
+
+const Fixed&	Fixed::min(const Fixed &a, const Fixed &b)
+{
+    return ((a < b) ? a : b);
+}
+
+Fixed&	Fixed::max(Fixed &a, Fixed &b)
+{
+    return ((a > b) ? a : b);
+}
+
+const Fixed&	Fixed::max(const Fixed &a, const Fixed &b)
+{
+    return ((a > b) ? a : b);
 }
 
 int		Fixed::getRawBits( void ) const
 {
 	std::cout << "getRawBits member function called" << std::endl;
-	return (this->_nValue);	
+	return (this->_nValue);
 }
 
 void	Fixed::setRawBits( int const raw )
 {
 	std::cout << "setRawBits member function called" << std::endl;
-	this->_nValue = raw;	
+	this->_nValue = raw;
 }
 
 int		Fixed::toInt( void ) const
