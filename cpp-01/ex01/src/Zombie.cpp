@@ -8,7 +8,7 @@ Zombie::Zombie() {}
 Zombie::~Zombie()
 {
 	std::cout	<< _name
-				<< " elimindated."
+				<< " deleted."
 				<< std::endl;
 }
 
