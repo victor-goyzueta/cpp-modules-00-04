@@ -115,8 +115,8 @@ unsigned int	ClapTrap::getAttackDamage() const
 
 void	ClapTrap::getStatus() const
 {
-	std::cout	<< "ClapTrap " << this->_name << " Status:" <<std::endl
-				<< "	" << this->_hitPoints << " HP" << std::endl
-				<< "	" << this->_energyPoints << " Energy points" << std::endl
-				<< "	" << this->_attackDamage << " Damage points" << std::endl;
+	std::cout	<< "ClapTrap " << this->getName() << " Status:" <<std::endl
+				<< "	" << this->getHitPoints() << " HP" << std::endl
+				<< "	" << this->getEnergyPoints() << " Energy points" << std::endl
+				<< "	" << this->getAttackDamage() << " Damage points" << std::endl;
 }

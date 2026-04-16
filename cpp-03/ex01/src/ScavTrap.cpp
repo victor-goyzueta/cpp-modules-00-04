@@ -1,5 +1,5 @@
-#include "inc/ScavTrap.hpp"
-#include "inc/ClapTrap.hpp"
+#include "../inc/ScavTrap.hpp"
+#include "../inc/ClapTrap.hpp"
 
 ScavTrap::ScavTrap() : ClapTrap()
 {
@@ -43,10 +43,29 @@ ScavTrap::~ScavTrap()
 
 void	ScavTrap::attack( const std::string& target )
 {
-	/*here*/
+	if (this->_hitPoints > 0)
+	{
+		if (this->_energyPoints > 0)
+		{
+			std::cout	<< "ScavTrap " << this->_name
+						<< " attacks " << target
+						<< " causing " << this->_attackDamage
+						<< " damage points!" << std::endl;
+			this->_energyPoints--;
+			return ;
+		}
+		std::cout	<< "ScavTrap " << this->_name
+					<< " does not have enough energy points to attack"
+					<< std::endl;
+		return ;
+	}
+	std::cout	<< "ScavTrap " << this->_name
+				<< " is unavailable" << std::endl;
 }
 
 void	ScavTrap::guardGate()
 {
-	/*here*/
+	std::cout	<< "ScavTrap "
+				<< this->_name
+				<< " is now in GateKeeper mode" << std::endl;
 }

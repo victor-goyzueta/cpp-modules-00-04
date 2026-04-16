@@ -4,19 +4,19 @@
 
 int	main()
 {
-	ClapTrap	Bob("Bob");
+	ClapTrap	bob("Bob");
 	ClapTrap	noName;
-	ClapTrap	Clone(Bob);
+	ClapTrap	copy(bob);
 
-	Bob.getStatus();
+	bob.getStatus();
 
-	Bob.attack("Enemy");
-	Bob.takeDamage(1);
-	Bob.beRepaired(2);
+	bob.attack("Enemy");
+	bob.takeDamage(1);
+	bob.beRepaired(2);
 
-	Bob.getStatus();
+	bob.getStatus();
 	noName.getStatus();
-	Clone.getStatus();
+	copy.getStatus();
 
 	return(0);
 }
