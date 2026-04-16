@@ -6,7 +6,7 @@
 int	main()
 {
 	ScavTrap	bob("Bob");
-	ScavTrap	noName;
+	ClapTrap*	ptr = new ScavTrap("Alloc");
 	ScavTrap	copy(bob);
 
 	bob.getStatus();
@@ -17,6 +17,11 @@ int	main()
 	bob.guardGate();
 
 	bob.getStatus();
-	noName.getStatus();
 	copy.getStatus();
+
+	ptr->getStatus();
+	ptr->attack("Enemy");
+
+	delete ptr;
+	return (0);
 }
