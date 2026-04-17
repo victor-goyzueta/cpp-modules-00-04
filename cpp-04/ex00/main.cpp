@@ -14,8 +14,8 @@ int	main()
 	std::cout << i->getType() << " " << std::endl;
 	i->makeSound();
 	j->makeSound();
-	meta->makeSoundq();
-
+	meta->makeSound();
+	
 	delete(meta);
 	delete(j);
 	delete(i);

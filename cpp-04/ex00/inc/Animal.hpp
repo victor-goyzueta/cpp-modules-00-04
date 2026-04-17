@@ -11,12 +11,12 @@ class Animal
 	public:
 		Animal();
 		Animal( const Animal& copy );
-		~Animal();
+		virtual ~Animal();
 
 		Animal& operator=( const Animal& copy );
 
-		virtual void	makeSound();
-		std::string		getType();
+		virtual void	makeSound() const;
+		std::string		getType() const;
 };
 
 #endif
