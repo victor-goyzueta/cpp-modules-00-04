@@ -6,6 +6,8 @@ CXXFLAGS	+= -I inc
 
 SRC			=	main.cpp			\
 				src/Animal.cpp		\
+				src/Dog.cpp			\
+				src/Cat.cpp			\
 
 
 OBJ			= $(SRC:.cpp=.o)
