@@ -26,7 +26,10 @@ Animal::~Animal()
 	std::cout << "Animal Class destructor called" << std::endl;
 }
 
-void	Animal::makeSound() const {}
+void	Animal::makeSound() const
+{
+	std::cout << "Unspecified sound" << std::endl;
+}
 
 std::string	Animal::getType() const
 {
