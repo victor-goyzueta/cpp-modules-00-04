@@ -9,7 +9,7 @@ Dog::Dog() : Animal()
 	type = "Dog";
 }
 
-Dog::Dog( const Dog& copy )
+Dog::Dog( const Dog& copy ) : Animal()
 {
 	std::cout << "Copy Dog Class constructor called" << std::endl;
 	*this = copy;
