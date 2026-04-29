@@ -2,6 +2,7 @@
 #include "../inc/Cat.hpp"
 
 #include <iostream>
+#include <string>
 
 Cat::Cat() : Animal()
 {

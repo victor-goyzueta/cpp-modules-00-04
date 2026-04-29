@@ -3,6 +3,7 @@
 #include "../inc/Brain.hpp"
 
 #include <iostream>
+#include <string>
 
 Dog::Dog() : Animal()
 {
@@ -39,4 +40,14 @@ Dog::~Dog()
 void	Dog::makeSound() const
 {
 	std::cout << "The dog barks" << std::endl;
+}
+
+Brain &Dog::getBrain(void) const
+{
+	return (*this->_brain);
+}
+
+void	Dog::setBrain(Brain const &brain)
+{
+	*this->_brain = brain;
 }

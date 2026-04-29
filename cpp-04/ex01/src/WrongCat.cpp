@@ -2,6 +2,7 @@
 #include "../inc/WrongCat.hpp"
 
 #include <iostream>
+#include <string>
 
 WrongCat::WrongCat() : WrongAnimal()
 {

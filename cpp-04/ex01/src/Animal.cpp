@@ -1,6 +1,7 @@
 #include "../inc/Animal.hpp"
 
 #include <iostream>
+#include <string>
 
 Animal::Animal()
 {

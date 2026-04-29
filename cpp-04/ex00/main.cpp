@@ -5,6 +5,7 @@
 #include "inc/WrongCat.hpp"
 
 #include <iostream>
+#include <string>
 
 int	main()
 {

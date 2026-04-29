@@ -2,6 +2,7 @@
 #include "../inc/Dog.hpp"
 
 #include <iostream>
+#include <string>
 
 Dog::Dog() : Animal()
 {

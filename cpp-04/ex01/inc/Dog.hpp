@@ -5,6 +5,7 @@
 # include "Brain.hpp"
 
 # include <iostream>
+# include <string>
 
 class Dog : public Animal
 {
@@ -19,6 +20,9 @@ class Dog : public Animal
 		Dog& operator=( const Dog& copy );
 
 		void	makeSound() const;
+		
+		Brain	&getBrain() const;
+		void	setBrain( Brain const &brain );
 };
 
 #endif

@@ -4,6 +4,7 @@
 # include "WrongAnimal.hpp"
 
 # include <iostream>
+# include <string>
 
 class WrongCat : public WrongAnimal
 {

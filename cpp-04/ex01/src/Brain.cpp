@@ -1,6 +1,7 @@
 #include "../inc/Brain.hpp"
 
 #include <iostream>
+#include <string>
 
 Brain::Brain()
 {
@@ -28,4 +29,17 @@ Brain&	Brain::operator=( const Brain& copy )
 Brain::~Brain()
 {
 	std::cout << "Brain Class destructor called" << std::endl;
+}
+
+std::string const	&Brain::getIdea( int const &i ) const
+{
+	if (i >= 0 && i < 100)
+		return (this->ideas[i]);
+	return (this->ideas[0]);
+}
+
+void	Brain::setIdea(std::string const &idea, int const &i)
+{
+	if (i >= 0 && i < 100)
+		this->ideas[i] = idea;
 }
