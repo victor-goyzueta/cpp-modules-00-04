@@ -1,7 +1,7 @@
-#include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "Brain.hpp"
+#include "inc/Animal.hpp"
+#include "inc/Dog.hpp"
+#include "inc/Cat.hpp"
+#include "inc/Brain.hpp"
 
 #include <iostream>
 #include <string>
