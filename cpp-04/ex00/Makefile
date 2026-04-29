@@ -2,7 +2,7 @@ NAME		= ex00
 
 CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
-CXXFLAGS	+= -I inc
+CXXFLAGS	+= -I inc -MMD -MP
 
 SRC			=	main.cpp			\
 				src/Animal.cpp		\
@@ -19,11 +19,13 @@ $(NAME): $(OBJ)
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 clean:
-	rm -rf $(OBJ)
+	rm -rf $(OBJ) $(OBJ:.o=.d)
 
 fclean:	clean
 	rm -rf $(NAME)
 
 re:	fclean all
+
+-include $(OBJ:.o=.d)
 
 .PHONY: all clean fclean re
