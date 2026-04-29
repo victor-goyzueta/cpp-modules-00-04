@@ -1,0 +1,34 @@
+# Ejecutables
+ex0*
+a.out
+
+# Binarios genéricos
+*.out
+*.exe
+
+# Objetos
+*.o
+
+# Dependencias generadas (Makefile -MMD)
+*.d
+
+# Librerías
+*.a
+*.so
+
+# Archivos temporales
+*~
+*.swp
+*.swo
+
+# macOS
+.DS_Store
+
+# VSCode
+.vscode/
+
+# Subjects
+*.subject.pdf
+
+# Logs
+*.log
