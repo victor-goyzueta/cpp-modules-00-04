@@ -5,15 +5,25 @@
 # include <string>
 
 # include "ICharacter.hpp"
+# include "AMateria.hpp"
 
-class Character
+class Character : public ICharacter
 {
 	private:
-		/* data */
+		std::string	_name;
 	
 	public:
-		Character(/* args */);
+		Character();
+		Character( std::string name );
+		Character( const Character& copy );
 		~Character();
+
+		Character& operator=( const Character& copy );
+
+		void	equip( const AMateria& materia );
+		void	use(size_t index, const Character& target );
+
+		std::string	getName() const;
 };
 
 #endif

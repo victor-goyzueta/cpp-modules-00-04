@@ -10,7 +10,6 @@ class ICharacter
 
 	public:
 		ICharacter();
-		ICharacter( std::string name );
 		ICharacter( const ICharacter& copy );
 		~ICharacter();
 
