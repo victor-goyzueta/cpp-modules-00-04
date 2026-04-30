@@ -56,3 +56,17 @@ int main(void)
 	}
 	return (0);
 }
+
+// INSTANTIABLE CLASS //
+
+// int main(void)
+// {
+// 	const Animal*	i = new Animal();
+
+// 	i->getType();
+// 	i->makeSound();
+
+// 	delete	i;
+
+// 	return (0);
+// }
