@@ -2,8 +2,8 @@
 #include <string>
 
 #include "inc/AMateria.hpp"
-#include "inc/ICharacter.hpp"
 #include "inc/Character.hpp"
+#include "inc/ICharacter.hpp"
 #include "inc/MateriaSource.hpp"
 #include "inc/IMateriaSource.hpp"
 #include "inc/Ice.hpp"
