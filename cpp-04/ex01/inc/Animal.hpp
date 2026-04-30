@@ -20,7 +20,6 @@ class Animal
 
 		virtual void	makeSound() const;
 		std::string		getType() const;
-		virtual Brain	&getBrain() const = 0;
 };
 
 #endif

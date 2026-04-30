@@ -21,7 +21,7 @@ class Dog : public Animal
 
 		void	makeSound() const;
 		
-		Brain	&getBrain() const;
+		Brain&	getBrain() const;
 		void	setBrain( Brain const &brain );
 };
 

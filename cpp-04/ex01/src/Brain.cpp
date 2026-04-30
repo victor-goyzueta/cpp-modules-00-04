@@ -35,11 +35,16 @@ std::string const	&Brain::getIdea( int const &i ) const
 {
 	if (i >= 0 && i < 100)
 		return (this->ideas[i]);
+	std::cout << "There is not idea: index out of range" << std::endl;
 	return (this->ideas[0]);
 }
 
 void	Brain::setIdea(std::string const &idea, int const &i)
 {
 	if (i >= 0 && i < 100)
+	{
 		this->ideas[i] = idea;
+		return ;
+	}
+	std::cout << "Not setteable idea: index out of range" << std::endl;
 }
