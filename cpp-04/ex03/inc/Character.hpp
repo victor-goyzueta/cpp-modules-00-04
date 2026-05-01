@@ -11,6 +11,7 @@ class Character : public ICharacter
 {
 	private:
 		std::string	_name;
+		AMateria*	slots[4];
 	
 	public:
 		Character();
@@ -20,10 +21,12 @@ class Character : public ICharacter
 
 		Character& operator=( const Character& copy );
 
+		std::string	const&	getName() const;
+
 		void	equip( const AMateria& materia );
+		void	unequip( int idx );
 		void	use(size_t index, const Character& target );
 
-		std::string	getName() const;
 };
 
 #endif

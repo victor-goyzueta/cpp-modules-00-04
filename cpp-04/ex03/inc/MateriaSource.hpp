@@ -7,6 +7,8 @@
 class MateriaSource : public IMateriaSource
 {
 	private:
+		AMateria*		slots[4];
+		static size_t	idx;
 
 	public:
 		MateriaSource();
@@ -15,7 +17,8 @@ class MateriaSource : public IMateriaSource
 
 		MateriaSource& operator=( const MateriaSource& copy );
 
-		
+		void		learnMateria( AMateria* m );
+		AMateria*	createMateria( std::string const& type );
 };
 
 #endif
