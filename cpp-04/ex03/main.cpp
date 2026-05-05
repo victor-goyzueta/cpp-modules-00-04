@@ -9,29 +9,77 @@
 #include "inc/Ice.hpp"
 #include "inc/Cure.hpp"
 
-int main()
+
+/*SUBJECT MAIN*/
+// int main()
+// {
+// 	IMateriaSource* src = new MateriaSource();
+
+// 	src->learnMateria(new Ice());
+// 	src->learnMateria(new Cure());
+
+// 	ICharacter* me = new Character("me");
+// 	AMateria* tmp;
+
+// 	tmp = src->createMateria("ice");
+// 	me->equip(tmp);
+
+// 	tmp = src->createMateria("cure");
+// 	me->equip(tmp);
+
+// 	ICharacter* bob = new Character("bob");
+// 	me->use(0, *bob);
+// 	me->use(1, *bob);
+
+// 	delete bob;
+// 	delete me;
+// 	delete src;
+
+// 	return 0;
+// }
+
+
+/*OWN MAIN*/
+int	main()
 {
-	IMateriaSource* src = new MateriaSource();
+	ICharacter*	me = new  Character("me");
+	IMateriaSource*	m = new MateriaSource();
 
-	src->learnMateria(new Ice());
-	src->learnMateria(new Cure());
+	m->learnMateria(new Ice());
+	m->learnMateria(new Ice());
+	m->learnMateria(new Ice());
+	m->learnMateria(new Ice());
+	m->learnMateria(new Cure());
 
-	ICharacter* me = new Character("me");
-	AMateria* tmp;
+	AMateria*	tmp;
 
-	tmp = src->createMateria("ice");
+	tmp = m->createMateria("cure");
 	me->equip(tmp);
 
-	tmp = src->createMateria("cure");
+	tmp = m->createMateria("ice");
 	me->equip(tmp);
 
-	ICharacter* bob = new Character("bob");
-	me->use(0, *bob);
-	me->use(1, *bob);
+	tmp = m->createMateria("ice");
+	me->equip(tmp);
 
-	delete bob;
+	tmp = m->createMateria("ice");
+	me->equip(tmp);
+
+	tmp = m->createMateria("cure");
+	me->equip(tmp);
+
+	me->unequip(0);
+	
+	ICharacter* enemy = new Character("enemy");
+	me->use(0, *enemy);
+	me->use(1, *enemy);
+	me->use(2, *enemy);
+	me->use(3, *enemy);
+	me->use(4, *enemy);
+
 	delete me;
-	delete src;
+	delete m;
+	delete enemy;
 
 	return 0;
 }

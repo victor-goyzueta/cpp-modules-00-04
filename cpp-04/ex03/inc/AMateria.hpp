@@ -6,6 +6,8 @@
 
 # include "ICharacter.hpp"
 
+class ICharacter;
+
 class AMateria
 {
 	protected:
@@ -15,7 +17,7 @@ class AMateria
 		AMateria();
 		AMateria( std::string const & type );
 		AMateria( const AMateria& copy );
-		~AMateria();
+		virtual ~AMateria();
 
 		AMateria&	operator=( const AMateria& copy );
 

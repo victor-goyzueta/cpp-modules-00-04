@@ -4,12 +4,14 @@ CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 CXXFLAGS	+= -I inc -MMD -MP
 
-SRC			=	main.cpp			\
-				AMateria.cpp		\
-				Character.cpp		\
-				ICharacter.cpp		\
-				IMateriaSource.cpp	\
-				MateriaSource.cpp	\
+SRC			=	main.cpp				\
+				src/AMateria.cpp		\
+				src/ICharacter.cpp		\
+				src/Character.cpp		\
+				src/IMateriaSource.cpp	\
+				src/MateriaSource.cpp	\
+				src/Ice.cpp				\
+				src/Cure.cpp			\
 
 
 OBJ			= $(SRC:.cpp=.o)

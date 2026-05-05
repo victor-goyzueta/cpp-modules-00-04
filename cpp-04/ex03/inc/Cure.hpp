@@ -1,5 +1,7 @@
-#ifndef Cure_HPP
-# define Cure_HPP
+#ifndef CURE_HPP
+# define CURE_HPP
+
+# include "AMateria.hpp"
 
 # include <iostream>
 # include <string>
@@ -15,7 +17,7 @@ class Cure : public AMateria
 
 		Cure& operator=( const Cure& copy );
 
-		AMateria*	clone();
+		AMateria*	clone() const;
 		void		use( ICharacter& target );
 };
 

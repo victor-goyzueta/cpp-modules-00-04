@@ -12,6 +12,8 @@ class Character : public ICharacter
 	private:
 		std::string	_name;
 		AMateria*	slots[4];
+		AMateria*	_floor[10];
+		int			_floorCount;
 	
 	public:
 		Character();
@@ -23,10 +25,9 @@ class Character : public ICharacter
 
 		std::string	const&	getName() const;
 
-		void	equip( const AMateria& materia );
+		void	equip( AMateria* m );
 		void	unequip( int idx );
-		void	use(size_t index, const Character& target );
-
+		void	use(int index, ICharacter& target );
 };
 
 #endif
