@@ -474,7 +474,3 @@ re: fclean all
 | `new[]` con `delete`                       | UB: mismatch de operadores                     | Usar `delete[]` para arrays                   |
 
 ---
-
-> **Consejo general:** ante cualquier duda sobre un objeto, pregúntate:
-> *¿quién lo crea? ¿quién lo posee? ¿quién lo destruye?*  
-> Responder esas tres preguntas resuelve el 80% de los bugs de memoria.
